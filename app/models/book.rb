@@ -1,6 +1,8 @@
 class Book < ApplicationRecord
 
   belongs_to :author
+  has_many :person_books
+  has_many :people, through: :person_books
 
   # validaytions link http://guides.rubyonrails.org/active_record_validations.html
   validates :terms_of_service, acceptance: true
